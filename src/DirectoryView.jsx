@@ -6,6 +6,8 @@ import RenameModal from "./components/RenameModal";
 import DirectoryList from "./components/DirectoryList";
 import { DirectoryContext } from "./context/DirectoryContext";
 
+
+
 import {
   getDirectoryItems,
   createDirectory,
@@ -55,7 +57,7 @@ function DirectoryView() {
 
   const loadDirectory = async () => {
       try {
-        console.log("haa bhai ye ho rha h");
+        // console.log("haa bhai ye ho rha h");
         const data = await getDirectoryItems(dirId);
         setDirectoryName(dirId ? data.name : "My Drive");
         setDirectoriesList([...data.directories].reverse());
@@ -72,7 +74,7 @@ function DirectoryView() {
   useEffect(() => {
     const loadDirectory = async () => {
       try {
-        console.log("haa bhai ye ho rha h");
+        // console.log("haa bhai ye ho rha h");
         const data = await getDirectoryItems(dirId);
         setDirectoryName(dirId ? data.name : "My Drive");
         setDirectoriesList([...data.directories].reverse());
@@ -139,7 +141,7 @@ function DirectoryView() {
 
   function handleRowClick(type, id) {
     if (type === "directory") navigate(`/directory/${id}`);
-    else window.location.href = `${process.env.VITE_BACKEND_BASE_URL}/file/${id}`;
+    else window.location.href = `${import.meta.env.VITE_BACKEND_BASE_URL}/file/${id}`;
   }
 
   async function handleFileSelect(e) {
