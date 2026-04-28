@@ -30,7 +30,7 @@ function DirectoryView() {
   console.log(dirId);
   const navigate = useNavigate();
 
-  const [directoryName, setDirectoryName] = useState("My Drive");
+  const [directoryName, setDirectoryName] = useState("Home");
   const [directoriesList, setDirectoriesList] = useState([]);
   const [filesList, setFilesList] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
@@ -59,7 +59,7 @@ function DirectoryView() {
       try {
         // console.log("haa bhai ye ho rha h");
         const data = await getDirectoryItems(dirId);
-        setDirectoryName(dirId ? data.name : "My Drive");
+        setDirectoryName(dirId ? data.name : "Home");
         setDirectoriesList([...data.directories].reverse());
         setPath((prev) => {
           if (JSON.stringify(prev) === JSON.stringify(data.path)) return prev;
@@ -76,7 +76,7 @@ function DirectoryView() {
       try {
         // console.log("haa bhai ye ho rha h");
         const data = await getDirectoryItems(dirId);
-        setDirectoryName(dirId ? data.name : "My Drive");
+        setDirectoryName(dirId ? data.name : "Home");
         setDirectoriesList([...data.directories].reverse());
         setPath((prev) => {
           if (JSON.stringify(prev) === JSON.stringify(data.path)) return prev;
