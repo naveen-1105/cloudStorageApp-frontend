@@ -76,7 +76,7 @@ function DirectoryView() {
       try {
         // console.log("haa bhai ye ho rha h");
         const data = await getDirectoryItems(dirId);
-        setDirectoryName(dirId ? data.name : "My Drive");
+        setDirectoryName(dirId ? data.name : "My Storage");
         setDirectoriesList([...data.directories].reverse());
         setPath((prev) => {
           if (JSON.stringify(prev) === JSON.stringify(data.path)) return prev;
