@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     env:
       S3_BUCKET_NAME: cloudosphere-frontend
