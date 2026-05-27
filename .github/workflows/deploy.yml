@@ -12,8 +12,8 @@ jobs:
       VITE_GOOGLE_CLIENT_ID: 4555697613-18p3s2o6hl7mvc3gj0o2a2bg7b27tj9m.apps.googleusercontent.com
       VITE_BACKEND_BASE_URL: https://api.cloudosphere.live
     steps:
-      - name: clone repository
-        run: git clone https://github.com/naveen-1105/cloudStorageApp-frontend.git
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
